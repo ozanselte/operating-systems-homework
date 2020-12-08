@@ -1,0 +1,10 @@
+list
+mkdir
+rmdir
+dumpe2fs
+write
+read
+del
+ln
+lnsym
+fsck
