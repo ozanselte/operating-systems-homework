@@ -1,0 +1,66 @@
+Student Name	: Ozan Şelte
+Student No	: 161044061
+
+The file extensions for these 3 files are not well defined in the homework
+PDF. I prefer .asm extension for these three.
+
+BinarySearch:
+	It will print -1 if the array do not contains the wanted
+	number, so the wanted number must be added to the array. It prints
+	the index and the number that it looked at.
+	nums	: The array
+	ncnt	: Numbers count of the array
+	wntd	: The wanted number which we want to find
+
+LinearSearch:
+	It will print -1 if the array do not contains the wanted
+	number, so the wanted number must be added to the array.It prints
+	the number that it looked at.
+	nums	: The array
+	ncnt	: Numbers count of the array
+	wntd	: The wanted number which we want to find
+
+Collatz:
+	It will print all the Collatz series from 1 to UPLMT.
+	UPLMT	: The upper limit
+
+FORK_SYSCALL:
+	Initializes process table if not already initialized. Creates
+	the same process of the current one and it is going to increase
+	child processes PC.
+	V0	: 18
+	RETURNS	: Childs process ID for parent, 0 for the child.
+
+WAITPID_SYSCALL:
+	Initializes process table if not already initialized. Changes
+	process table for waiting. After this, Context switch occurs.
+	V0	: 19
+	A0	: Process ID of the waiting process. -1 for all children.
+
+EXECVE_SYSCALL:
+	Initializes process table if not already initialized. Changes
+	all segments with the new file/process.
+	V0	: 20
+	A0	: File path.
+
+PROCESS_EXIT_SYSCALL:
+	Closes current process. If it is the init, simulation ends. If not,
+	context switch occurs.
+	V0	: 21
+
+RANDOM_INT_SYSCALL:
+	Return a random integer between -1 and upper limit, excluded. If 3
+	given, it returns 0, 1 or 2.
+	V0	: 22
+	A0	: Upper limit
+	RETURNS	: Random integer
+
+Table Prints:
+	After every context switch the table will be printed as follows.
+	Process ID
+	Process Name
+	Program Counter
+	Stack Pointer
+	Parent Process ID
+	Process State, if WAITING, waiting Process ID
+
